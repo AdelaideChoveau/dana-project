@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Map from './components/Map'
 
 function App() {
-  const [eventData, setEventData] = useState([])
+  const [records, setRecords] = useState([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -11,7 +11,7 @@ function App() {
       const res = await fetch('https://opendata-ajuntament.barcelona.cat/data/api/action/datastore_search?resource_id=796ee1c2-975a-4d68-8753-52df8c2fc304')
       const data = await res.json()
 
-      setEventData(data.result.records)
+      setRecords(data.result.records)
       setLoading(false)
     }
 
@@ -19,10 +19,10 @@ function App() {
 
     
   }, [])
-  console.log(eventData);
+  console.log(records);
   return (
     <div>
-      <Map />
+      <Map records={records} />
     </div>
   );
 }

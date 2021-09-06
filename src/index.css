@@ -13,7 +13,29 @@ body {
 .location-icon {
   font-size: 2rem;
   color: red;
+}
 
+.association-info {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 400px;
+  min-height: 200px;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.association-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.phone-icon {
+  font-size: 2rem;
+  color: red;
 }
 
 
