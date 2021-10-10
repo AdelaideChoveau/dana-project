@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import Map from './components/Map'
+import Map from './components/Map';
+import FilterBar from './components/FilterBar';
 
 function App() {
   const [records, setRecords] = useState([])
@@ -13,6 +14,7 @@ function App() {
 
       setRecords(data.result.records)
       setLoading(false)
+    
     }
 
     fetchEvents()
@@ -20,8 +22,15 @@ function App() {
     
   }, [])
   console.log(records);
+
+  const generateAreaDataForDropdown = () =>{
+    return [...new Set(records.map(ev => ev.addresses_district_name))];
+};
+
   return (
     <div>
+      <h1>Dana Project</h1>
+      <FilterBar areas={generateAreaDataForDropdown}/>
       <Map records={records} />
     </div>
   );
