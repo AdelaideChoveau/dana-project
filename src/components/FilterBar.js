@@ -1,5 +1,16 @@
+import { useState } from 'react';
 
-const FilterBar = ({ areas }) =>{
+const FilterBar = ({ areas, onNameFilter }) =>{
+    const [name, setName] = useState("");
+
+    const handleNameChange= (event) =>{
+        const { value } = event.target;
+        setName(value);
+        onNameFilter(value);
+    };
+    
+    
+    
     console.log(areas);
 
     return (
@@ -10,7 +21,11 @@ const FilterBar = ({ areas }) =>{
 
             <div>  
                 <label className="nameTitle">Name</label>
-                <input type="text" className="nameForm" id="name"></input>
+                <input
+                    type="text"
+                    className="nameForm"
+                    id="name"
+                    onChange={handleNameChange}></input>
             </div>
             
             <div>  
