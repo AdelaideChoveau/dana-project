@@ -36,6 +36,23 @@ function App() {
     setRecords(filteredRecords)
   };
 
+  const handleFilterArea = (area) => {
+    const filteredRecords = records.filter(item =>{
+      if(item.area === area){
+        return item;
+      }
+    });
+    setRecords(filteredRecords)
+  };
+
+  const handleFilterCategory = (category) => {
+    const filteredRecords = records.filter(item =>{
+      if(item.category === category){
+        return item;
+      }
+    });
+    setRecords(filteredRecords)
+  };
  
 
 
@@ -45,6 +62,8 @@ function App() {
       <FilterBar
       areas={generateAreaDataForDropdown()}
       onNameFilter={handleFilterName}
+      onAreaFilter={handleFilterArea}
+      onCategoryFilter={handleFilterCategory}
       />
       <div>
         {records.map((item) => {

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-const FilterBar = ({ areas, onNameFilter }) =>{
+const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter }) =>{
     const [filters, setFilters] = useSate({
         name: "",
         area: "",
@@ -22,8 +22,10 @@ const FilterBar = ({ areas, onNameFilter }) =>{
                 onNameFilter(value);
                 break;
             case "area":
+                onAreaFilter(value);
                 break;
             case "category":
+                onCategoryFilter(value);
                 break;
             case "dateAvailable":
                 break;             
@@ -54,7 +56,7 @@ const FilterBar = ({ areas, onNameFilter }) =>{
             <div>  
                 <label className="areaTitle">Area</label>
                 <select className="areaSelect" id="area">
-                    <option value="">Select</option>
+                    <option value="" onChange={handleInput("area")}>Select</option>
                     {areas.map((area) => (
                         <option value={area} key={area}>
                             {area}
@@ -65,7 +67,7 @@ const FilterBar = ({ areas, onNameFilter }) =>{
 
             <div>  
                 <label className="categoryTitle">Categories</label>
-                <select className="categorySelect" id="category">
+                <select className="categorySelect" id="category" onChange={handleInput("category")}>
                     <option value="">Select</option>
                     <option value="Integration">Integration</option>
                     <option value="Animals">Animals</option>
@@ -76,7 +78,7 @@ const FilterBar = ({ areas, onNameFilter }) =>{
 
             <div>
                 <label className="avilableDateTitle">Date available</label>
-                <input type="date" className="availableDate" id="available"></input> 
+                <input type="date" className="availableDate" id="available" onChange={handleInput("dateAvailable")}></input> 
             </div>
 
             <button type="submit">Search</button>
