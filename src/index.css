@@ -1,7 +1,7 @@
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
 .map {
@@ -37,5 +37,148 @@ body {
   font-size: 2rem;
   color: red;
 }
+
+.filterHeader {
+  width: 1000px;
+	padding: 20px, 40px;
+	background: #7690da;
+	margin: 20px auto;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.search-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  background: yellow
+}
+
+.filterSection{
+  margin: 5px 10px 5px 0;
+
+}
+
+
+
+.filterBox {
+  position: relative;
+  display:inline-flex;
+  margin-top: 10px;
+  top: 50%;
+  left: 15%;
+  width: 250px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  background: #fff;
+  transition: all 0.3s ease;
+
+  &.focus {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.filterTitle {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  font-weight: bold;
+}
+
+.nameForm {
+  position: absolute;
+  top: 10px;
+  left: 38px;
+  font-size: 14px;
+  background: none;
+  color: #5a6674;
+  width: 195px;
+  height: 20px;
+  border: none;
+  appearance: none;
+  outline: none;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.filterSelect {
+  position: absolute;
+  top: 10px;
+  left: 38px;
+  font-size: 14px;
+  background: none;
+  color: #5a6674;
+  width: 195px;
+  height: 20px;
+  border: none;
+  appearance: none;
+  outline: none;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.availableDate {
+  position: absolute;
+  top: 10px;
+  left: 38px;
+  font-size: 14px;
+  background: none;
+  color: #5a6674;
+  width: 195px;
+  height: 20px;
+  border: none;
+  appearance: none;
+  outline: none;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.searchfilterBox {
+  position: relative;
+  display:inline-flex;
+  top: 50%;
+  left: 15%;
+  width: 200px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  background: green;
+  transition: all 0.3s ease;
+
+  &.focus {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.searchButton {
+  position: absolute;
+  top: 10px;
+  left: 38px;
+  font-size: 14px;
+  background: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  width: 195px;
+  height: 20px;
+  border: none;
+  appearance: none;
+  outline: none;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+
 
 

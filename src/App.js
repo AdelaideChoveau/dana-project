@@ -6,6 +6,7 @@ function App() {
   const [records, setRecords] = useState([])
   const [loading, setLoading] = useState(false)
 
+
   useEffect(() => {
     const fetchEvents = async () => {
       setLoading(true)
