@@ -25,23 +25,27 @@ function App() {
 
   const generateAreaDataForDropdown = () =>{
     return [...new Set(records.map(ev => ev.addresses_district_name))];
+  };
 
   const handleFilterName = (name) => {
     const filteredRecords = records.filter(item =>{
-      if(name.toLowerCase().includes(name.toLowerCase())){
+      if(item.name.toLowerCase().includes(name.toLowerCase())){
         return item;
       }
     });
     setRecords(filteredRecords)
-  }
-};
+  };
+
+ 
+
 
   return (
     <div>
       <h1>Dana Project</h1>
       <FilterBar
       areas={generateAreaDataForDropdown()}
-      onNameFilter={handleFilterName}/>
+      onNameFilter={handleFilterName}
+      />
       <div>
         {records.map((item) => {
           <Map item={item} key={item.id} />

@@ -1,15 +1,37 @@
 import { useState } from 'react';
 
 const FilterBar = ({ areas, onNameFilter }) =>{
-    const [name, setName] = useState("");
+    const [filters, setFilters] = useSate({
+        name: "",
+        area: "",
+        category: "",
+        dateAvailable: "",
+    })
 
-    const handleNameChange= (event) =>{
+
+    const handleInput= (field) => (event) =>{
         const { value } = event.target;
-        setName(value);
-        onNameFilter(value);
+    
+    setFilters({
+        ...filters,
+        [field]: value,
+    });
+
+        switch (field) {
+            case "name":
+                onNameFilter(value);
+                break;
+            case "area":
+                break;
+            case "category":
+                break;
+            case "dateAvailable":
+                break;             
+
+            default:
+                break;
+        } 
     };
-    
-    
     
     console.log(areas);
 
@@ -25,7 +47,8 @@ const FilterBar = ({ areas, onNameFilter }) =>{
                     type="text"
                     className="nameForm"
                     id="name"
-                    onChange={handleNameChange}></input>
+                    value={filters.name}
+                    onChange={handleInput("name")}></input>
             </div>
             
             <div>  
@@ -55,6 +78,8 @@ const FilterBar = ({ areas, onNameFilter }) =>{
                 <label className="avilableDateTitle">Date available</label>
                 <input type="date" className="availableDate" id="available"></input> 
             </div>
+
+            <button type="submit">Search</button>
              
         </div>
     )
