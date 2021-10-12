@@ -231,6 +231,11 @@ header nav li {
   color: #1CAC78;
 }
 
+.heart-icon {
+  font-size: 3rem;
+  color: #1CAC78;
+}
+
 
 .search-inline {
   display: flex;
@@ -359,29 +364,24 @@ header nav li {
 }
 
 
-
-
-
-
-/*---------------------------------------------------------*/
 /* CONTACT ME                               */
-/*---------------------------------------------------------*/
+
 .contactme {
   width: 100%;
   background-image: url("https://images.unsplash.com/photo-1544918877-460635b6d13e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 .contactOverlay {
   width: 100%;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: rgba(218, 233, 14, 0.418);
 }
 .form {
-  width: 100%;
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -393,7 +393,8 @@ header nav li {
   align-items: center;
 }
 form {
-  width: 80%;
+  width: 60%;
+  margin: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -425,14 +426,14 @@ form button:hover {
   padding: 4%;
 }
 .formWord h2 {
-  font-size: 35px;
+  font-size: 23px;
   font-weight: bold;
   font-family: "Josefin Sans", sans-serif;
   margin-bottom: 10%;
 }
 .formWord input {
   width: 100%;
-  height: 50px;
+  height: 30px;
   margin-bottom: 10%;
   border: 0;
   margin-top: 2%;
@@ -440,6 +441,7 @@ form button:hover {
   background: #ffffff;
   -webkit-box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
   box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+  border-radius: 20px;
 }
 .formWord textarea {
   width: 100%;
@@ -451,9 +453,10 @@ form button:hover {
   -webkit-box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
   box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
   padding-left: 3%;
+  border-radius: 20px;
 }
-/*---------------------------------------------------------*/
+
 /* CONTACT ME END                                */
-/*---------------------------------------------------------*/
+
 
 
