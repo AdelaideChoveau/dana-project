@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Map from './components/Map';
 import FilterBar from './components/FilterBar';
+import Presentation from './components/Presentation';
 
 function App() {
   const [records, setRecords] = useState([])
@@ -55,20 +56,18 @@ function App() {
     setRecords(filteredRecords)
   };
   
-  function handleSearch = () => {
-    
- }
-
+// function handleSearch ()
 
   return (
     <div>
-      <h1>Dana Project</h1>
+      <Presentation />
+        
       <FilterBar
       areas={generateAreaDataForDropdown()}
       onNameFilter={handleFilterName}
       onAreaFilter={handleFilterArea}
       onCategoryFilter={handleFilterCategory}
-      onSearchClick={handleSearch}
+    //  onSearchClick={handleSearch}
       />
 
       <div>

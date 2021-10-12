@@ -42,13 +42,9 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
 
     return (
         <div>
-            <div className="filterHeader">
-                <h2 className="bottom">Filters</h2>
-            </div> 
 
             <div className="search-inline">
                 <div className="filterSection">
-                    
                     <div className="filterBox">  
                         <label className="filterTitle">Name</label>
                             <input
@@ -88,7 +84,9 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
                 </div>
 
                 <div className="searchfilterBox">
-                    <button type="button" className="searchButton" onClick={handleSearch}>Search </button>
+                    <button type="button" className="searchButton" 
+                    //</div>onClick={handleSearch}
+                    >Search </button>
                 </div>
 
 
