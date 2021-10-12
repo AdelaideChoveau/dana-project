@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Map from './components/Map';
 import FilterBar from './components/FilterBar';
 import Presentation from './components/Presentation';
+import Contact from './components/Contact';
 
 function App() {
   const [records, setRecords] = useState([])
@@ -60,6 +61,7 @@ function App() {
 
   return (
     <div>
+      
       <Presentation />
         
       <FilterBar
@@ -76,7 +78,11 @@ function App() {
         })}
       </div>
       <Map records={records} />
+    
+      <Contact />
+    
     </div>
+    
   );
 }
 

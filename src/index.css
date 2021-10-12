@@ -8,6 +8,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: yellow;
 }
 
 .background-image {
@@ -30,6 +31,8 @@ ul, li,
 nav {
 	list-style: none;
 }
+
+/* Links */
 
 a {
 	text-decoration: none;
@@ -55,6 +58,25 @@ a.btn {
 }
 
 a.btn:hover {
+	background-color: #ACE1AF;
+}
+
+/*Buttons*/
+
+button.searchButton {
+  width: 200px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	background-color: #1CAC78;
+	opacity: 1;
+	transition: all 400ms;
+}
+
+button.searchButton:hover {
 	background-color: #ACE1AF;
 }
 
@@ -127,6 +149,13 @@ header nav li {
 
 .hero h3 {
 	font: 28px "Raleway", sans-serif;
+	font-weight: 300;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+	margin-bottom: 20px;
+}
+
+.hero h4 {
+	font: 25px "Raleway", sans-serif;
 	font-weight: 300;
 	text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 	margin-bottom: 40px;
@@ -303,18 +332,16 @@ header nav li {
   border-radius: 40px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   transform: translate(-50%, -50%);
-  background: #1CAC78;
+  background: yellow;
   transition: all 0.3s ease;
 
   &.focus {
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
   }
-}
+} 
 
 .searchButton {
   position: absolute;
-  top: 10px;
-  left: 38px;
   font-size: 14px;
   background: none;
   font-size: 20px;
@@ -332,5 +359,101 @@ header nav li {
 }
 
 
+
+
+
+
+/*---------------------------------------------------------*/
+/* CONTACT ME                               */
+/*---------------------------------------------------------*/
+.contactme {
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1544918877-460635b6d13e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5%;
+}
+.contactOverlay {
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: rgba(218, 233, 14, 0.418);
+}
+.form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+form {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 40px;
+}
+form button {
+  width: 190px;
+  height: 55px;
+  border: 0;
+  border-radius: 40px;
+  background-color: #1CAC78;
+  -webkit-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+  transition: 0.5s linear;
+  color: white;
+  font-weight: bold;
+  margin-top: 20%;
+}
+form button:hover {
+  background-color: black
+}
+.formWord {
+  width: 40%;
+  padding: 4%;
+}
+.formWord h2 {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 10%;
+}
+.formWord input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10%;
+  border: 0;
+  margin-top: 2%;
+  padding-left: 3%;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+  box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+}
+.formWord textarea {
+  width: 100%;
+  margin-bottom: 10%;
+  border: 0;
+  margin-top: 2%;
+  height: 80px;
+  color: black;
+  -webkit-box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+  box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+  padding-left: 3%;
+}
+/*---------------------------------------------------------*/
+/* CONTACT ME END                                */
+/*---------------------------------------------------------*/
 
 

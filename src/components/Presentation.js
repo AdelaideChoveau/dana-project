@@ -5,9 +5,11 @@ import locationIcon from '@iconify/icons-mdi/map-marker'
 const Presentation = () => {
     return (
 <div>    
-    <div class="background-image"></div>
+
         <div className="header">
+        
             <h2 className="bottom">DANA Project</h2>
+            
                 <nav>
                     <li><a href="#">Project</a></li>
                     <li><a href="#">Map</a></li>
@@ -17,19 +19,19 @@ const Presentation = () => {
 
 
         <div class="hero">
+        <div class="background-image"></div>
                 <div class="hero-content-area">
                     <h1><Icon icon={locationIcon} className="logo-icon" /></h1>
-                    <h2>Be Social. Learn being in an assocation.</h2>
+                    <h2>Be Social.</h2>
+                    <h3>Learn about the <mark>assocations</mark> of Barcelona.</h3>
                     
-                    <h3>A "still in progess" map that will filter all the associations in Barcelona by
-                        
-                    <li>name</li>
+                    <h3>Work in progress <strong>Map</strong> that will filter all the associations by</h3>
+                    <h4><li>name</li>
                     <li>localisation</li>
                     <li>category</li>
                     <li>available date</li>
-                    
-                    to contribute</h3>
-                    <a href="#" class="btn">Explore</a>
+                    </h4>
+                   
                 </div>
         </div>
 </div> 

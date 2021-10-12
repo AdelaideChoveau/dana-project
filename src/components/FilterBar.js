@@ -70,11 +70,7 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
                 <div className="filterBox">  
                     <label className="filterTitle">Categories</label>
                     <select className="filterSelect" id="category" onChange={handleInput("category")}>
-                        <option value="">Select</option>
-                        <option value="Integration">Integration</option>
-                        <option value="Animals">Animals</option>
-                        <option value="Elder people">Elder People</option>
-                        <option value="Kids">Kids</option>
+                        <option value="">Still work in progress - </option>
                     </select>
                 </div>
 
