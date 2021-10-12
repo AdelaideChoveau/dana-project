@@ -41,7 +41,7 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
     console.log(areas);
 
     return (
-        <div>
+        <div id="map">
 
             <div className="search-inline">
                 <div className="filterSection">

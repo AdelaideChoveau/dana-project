@@ -8,20 +8,20 @@ const Presentation = () => {
 
         <div className="header">
         
-            <h2 className="bottom">DANA Project</h2>
+            <h2 className="bottom" ><a href="#map">DANA Project</a></h2>
             
                 <nav>
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">Map</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#map">Map</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </nav>
         </div> 
 
 
-        <div class="hero">
+        <div class="hero" id="project">
         <div class="background-image"></div>
                 <div class="hero-content-area">
-                    <h1><Icon icon={locationIcon} className="logo-icon" /></h1>
+                    <h1><a href="#map"><Icon icon={locationIcon} className="logo-icon" /></a></h1>
                     <h2>Be Social.</h2>
                     <h3>Learn about the <mark>assocations</mark> of Barcelona.</h3>
                     
