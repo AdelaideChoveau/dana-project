@@ -54,7 +54,10 @@ function App() {
     });
     setRecords(filteredRecords)
   };
- 
+  
+  function handleSearch = () => {
+    
+ }
 
 
   return (
@@ -65,7 +68,9 @@ function App() {
       onNameFilter={handleFilterName}
       onAreaFilter={handleFilterArea}
       onCategoryFilter={handleFilterCategory}
+      onSearchClick={handleSearch}
       />
+
       <div>
         {records.map((item) => {
           <Map item={item} key={item.id} />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter }) =>{
+const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
     const [filters, setFilters] = useState({
         name: "",
         area: "",
@@ -33,6 +33,10 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter }) =>{
                 break;
         } 
     };
+
+
+
+  
     
     console.log(areas);
 
@@ -83,9 +87,11 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter }) =>{
                     <input type="date" className="availableDate" id="available" onChange={handleInput("dateAvailable")}></input> 
                 </div>
 
-                    <div className="searchfilterBox">
-                        <button type="submit" className="searchButton">Search </button>
-                    </div>
+                <div className="searchfilterBox">
+                    <button type="button" className="searchButton" onClick={handleSearch}>Search </button>
+                </div>
+
+
 
                 </div>
             </div>
