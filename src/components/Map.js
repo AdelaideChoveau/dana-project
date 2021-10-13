@@ -10,7 +10,7 @@ const Map = ({ records=[], center, zoom }) => {
 
     const markers = records.map(ev => {
         if(ev.addresses_town === 'BARCELONA') {
-            return <LocationMarker lat={ev.geo_epgs_4326_x} lng={ev.geo_epgs_4326_y} onClick={() => setAssociationInfo({ name: ev.name, tel: ev.values_value })}/>
+            return <LocationMarker lat={ev.geo_epgs_4326_x} lng={ev.geo_epgs_4326_y} onClick={() => setAssociationInfo({ name: ev.name, tel: ev.values_value, area: ev.addresses_district_name })}/>
         }
         return null
     })

@@ -25,7 +25,7 @@ const Presentation = () => {
                     <h2>Be Social.</h2>
                     <h3>Learn about the <mark>assocations</mark> of Barcelona.</h3>
                     
-                    <h3>Work in progress <strong>Map</strong> that will filter all the associations by</h3>
+                    <h3><i>Work in progress</i> <strong>Map</strong> that will filter all the associations by</h3>
                     <h4><li>name</li>
                     <li>localisation</li>
                     <li>category</li>

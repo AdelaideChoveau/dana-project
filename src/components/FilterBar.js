@@ -72,7 +72,7 @@ const FilterBar = ({ areas, onSearchClick }) =>{
                 <div className="filterBox">
                     <label className="filterTitle">Categories</label>
                     <select className="filterSelect" id="category" onChange={handleInput("category")}>
-                        <option value="">Still work in progress - </option>
+                        <option value="">Still work in progress -</option>
                     </select>
                 </div>
 
