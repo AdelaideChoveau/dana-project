@@ -6,8 +6,8 @@ import Contact from './components/Contact';
 
 function App() {
   const [records, setRecords] = useState([])
+  const [filteredRecords, setFilteredRecords] = useState([])
   const [loading, setLoading] = useState(false)
-
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -16,48 +16,47 @@ function App() {
       const data = await res.json()
 
       setRecords(data.result.records)
-      setLoading(false)
-    
+       // these are the records we use to display markers on the map, because if we were to filter records we'd be overriding the
+       // data that we retrieved when fetching 
+      setFilteredRecords(data.result.records)
+      setLoading(false)    
     }
 
     fetchEvents()
-
     
   }, [])
-  console.log(records);
+
+  // console.log(records);
 
   const generateAreaDataForDropdown = () =>{
     return [...new Set(records.map(ev => ev.addresses_district_name))];
   };
 
-  const handleFilterName = (name) => {
-    const filteredRecords = records.filter(item =>{
-      if(item.name.toLowerCase().includes(name.toLowerCase())){
-        return item;
-      }
-    });
-    setRecords(filteredRecords)
-  };
+  const handleSearch = (filters) => {
+    // we apply all filters one after the other and in the end
+    // overwrite the filteredRecords state variable
 
-  const handleFilterArea = (area) => {
-    const filteredRecords = records.filter(item =>{
-      if(item.area === area){
-        return item;
-      }
-    });
-    setRecords(filteredRecords)
-  };
+    // filter by name
+    let newRecords = [...records]
+    
+    if (filters.name) {
+      newRecords = newRecords.filter(item => item.name.toLowerCase().includes(filters.name.toLowerCase()));
+    }
 
-  const handleFilterCategory = (category) => {
-    const filteredRecords = records.filter(item =>{
-      if(item.category === category){
-        return item;
-      }
-    });
-    setRecords(filteredRecords)
-  };
-  
-// function handleSearch ()
+    // filter by area
+
+    if (filters.area) {
+      newRecords = newRecords.filter(item => item.addresses_district_name === filters.area);
+    }
+
+    // filter by category
+
+    if (filters.category) {
+      newRecords = newRecords.filter(item => item.category === filters.category);
+    }
+
+    setFilteredRecords(newRecords)
+  }
 
   return (
     <div>
@@ -66,18 +65,18 @@ function App() {
         
       <FilterBar
       areas={generateAreaDataForDropdown()}
-      onNameFilter={handleFilterName}
-      onAreaFilter={handleFilterArea}
-      onCategoryFilter={handleFilterCategory}
-    //  onSearchClick={handleSearch}
+        // onNameFilter={handleFilterName}
+        // onAreaFilter={handleFilterArea}s
+        // onCategoryFilter={handleFilterCategory}
+        onSearchClick={handleSearch}
       />
 
       <div>
-        {records.map((item) => {
+        {/* {records.map((item) => {
           <Map item={item} key={item.id} />
-        })}
+        })} */}
       </div>
-      <Map records={records} />
+      <Map records={filteredRecords} />
     
       <Contact />
     

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
+const FilterBar = ({ areas, onSearchClick }) =>{
     const [filters, setFilters] = useState({
         name: "",
         area: "",
@@ -8,36 +8,38 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
         dateAvailable: "",
     })
 
-    const handleInput= (field) => (event) =>{
+    const handleInput = (field) => (event) => {
         const { value } = event.target;
-    
-    setFilters({
-        ...filters,
-        [field]: value,
-    });
 
-        switch (field) {
-            case "name":
-                onNameFilter(value);
-                break;
-            case "area":
-                onAreaFilter(value);
-                break;
-            case "category":
-                onCategoryFilter(value);
-                break;
-            case "dateAvailable":
-                break;             
+        setFilters({
+            ...filters,
+            [field]: value,
+        });
 
-            default:
-                break;
-        } 
+        // switch (field) {
+        //     case "name":
+        //         onNameFilter(value);
+        //         break;
+        //     case "area":
+        //         onAreaFilter(value);
+        //         break;
+        //     case "category":
+        //         onCategoryFilter(value);
+        //         break;
+        //     case "dateAvailable":
+        //         break;
+
+        //     default:
+        //         break;
+        // }
     };
 
+    const handleSearch = () => {
+        // provide the filters to the parent element upon clicking
+        // the parent element will do the filtering
+        onSearchClick(filters)
+    }
 
-
-  
-    
     console.log(areas);
 
     return (
@@ -45,7 +47,7 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
 
             <div className="search-inline">
                 <div className="filterSection">
-                    <div className="filterBox">  
+                    <div className="filterBox">
                         <label className="filterTitle">Name</label>
                             <input
                             type="text"
@@ -55,10 +57,10 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
                             onChange={handleInput("name")}></input>
                     </div>
 
-                    <div className="filterBox">  
+                    <div className="filterBox">
                     <label className="filterTitle">Area</label>
-                    <select className="filterSelect" id="area">
-                        <option value={filters.area} onChange={handleInput("area")}>Select</option>
+                    <select className="filterSelect" id="area" onChange={handleInput("area")}>
+                        <option value={filters.area}>Select</option>
                         {areas.map((area) => (
                             <option value={area} key={area}>
                                 {area}
@@ -67,7 +69,7 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
                     </select>
                 </div>
 
-                <div className="filterBox">  
+                <div className="filterBox">
                     <label className="filterTitle">Categories</label>
                     <select className="filterSelect" id="category" onChange={handleInput("category")}>
                         <option value="">Still work in progress - </option>
@@ -76,16 +78,12 @@ const FilterBar = ({ areas, onNameFilter, onAreaFilter, onCategoryFilter}) =>{
 
                 <div className="filterBox">
                     <label className="filterTitle">Date available</label>
-                    <input type="date" className="availableDate" id="available" onChange={handleInput("dateAvailable")}></input> 
+                    <input type="date" className="availableDate" id="available" onChange={handleInput("dateAvailable")}></input>
                 </div>
 
                 <div className="searchfilterBox">
-                    <button type="button" className="searchButton" 
-                    //</div>onClick={handleSearch}
-                    >Search </button>
+                    <button type="button" className="searchButton" onClick={handleSearch}>Search </button>
                 </div>
-
-
 
                 </div>
             </div>
